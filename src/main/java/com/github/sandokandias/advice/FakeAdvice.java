@@ -1,4 +1,4 @@
-package com.github.sandokandias;
+package com.github.sandokandias.advice;
 
 import net.bytebuddy.asm.Advice;
 

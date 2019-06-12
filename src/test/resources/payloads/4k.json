@@ -1,0 +1,176 @@
+{
+  "header": {
+    "eventId": "PEV-gcb07d87-g1a7-4b32-9ca4-0f903fbec1d1",
+    "eventType": "PAYMENT_REQUESTED",
+    "customerId": "83237f28-8853-41a3-83d0-03457db6d014",
+    "context": {
+      "localTrackingId": "83fd81827f6040e58811d554e9005dd3",
+      "globalTrackingId": "ff259f2c21cc43faa779f83b59bf634f",
+      "organization": "zup",
+      "application": "sample_segment",
+      "custom": {}
+    },
+    "version": 1,
+    "timestamp": "2018-03-30T17:44:29.319",
+    "domain": "PAYMENTS"
+  },
+  "payloadType": "PAYMENT_REQUESTED",
+  "payload": {
+    "paymentId": "PAY-gcc2235a-762a-4810-b027-1ed72265a123",
+    "externalId": "gc0360a3-17a9-45ce-b725-d5efc425bdff",
+    "async": true,
+    "paymentIntent": "CAPTURE",
+    "transaction": {
+      "externalId": "gc0360a3-17a9-45ce-b725-d5efc425bdff",
+      "description": {
+        "full": "PLAN UNLIMITED - VOICE UNLIMITED - DATA UNLIMITED - SMS UNLIMITED",
+        "soft": "PLAN UNLIMITED"
+      },
+      "type": "RECURRENCE",
+      "price": {
+        "currency": "BRL",
+        "amount": 4990,
+        "scale": 2
+      },
+      "points": 0,
+      "details": {
+        "discounts": [
+          {
+            "description": "DISCOUNT REWARD",
+            "amountAsPercent": 0,
+            "amountAsCurrency": {
+              "currency": "BRL",
+              "amount": 990,
+              "scale": 2
+            }
+          }
+        ],
+        "tax": {
+          "currency": "BRL",
+          "amount": 0,
+          "scale": 2
+        },
+        "handlingFee": {
+          "currency": "BRL",
+          "amount": 0,
+          "scale": 2
+        },
+        "shippingFee": {
+          "currency": "BRL",
+          "amount": 0,
+          "scale": 2
+        },
+        "shippingDiscount": {
+          "currency": "BRL",
+          "amount": 0,
+          "scale": 2
+        },
+        "insurance": {
+          "currency": "BRL",
+          "amount": 0,
+          "scale": 2
+        }
+      },
+      "items": [
+        {
+          "code": "1f0360a3-17a9-45ce-b725-d5efc425bdff",
+          "name": "PLAN UNLIMITED - VOICE UNLIMITED - DATA UNLIMITED - SMS UNLIMITED",
+          "quantity": 1,
+          "price": {
+            "currency": "BRL",
+            "amount": 4990,
+            "scale": 2
+          },
+          "customFields": {
+            "customField": "customValue"
+          }
+        }
+      ]
+    },
+    "paymentTransaction": {
+      "price": {
+        "currency": "BRL",
+        "amount": 4990,
+        "scale": 2
+      },
+      "discount": {
+        "currency": "BRL",
+        "amount": 990,
+        "scale": 2
+      },
+      "subtotal": {
+        "currency": "BRL",
+        "amount": 4000,
+        "scale": 2
+      }
+    },
+    "payments": [
+      {
+        "paymentMethod": "ACCOUNT_CASH",
+        "paymentMethodId": {
+          "id": "CASH-766d1eca-a864-443e-b6f8-459a52f29f2f"
+        },
+        "paymentTransaction": {
+          "price": {
+            "currency": "BRL",
+            "amount": 2990,
+            "scale": 2
+          },
+          "discount": {
+            "currency": "BRL",
+            "amount": 445,
+            "scale": 2
+          },
+          "subtotal": {
+            "currency": "BRL",
+            "amount": 2545,
+            "scale": 2
+          }
+        },
+        "accountCash": {
+          "accountCashId": "CASH-766d1eca-a864-443e-b6f8-459a52f29f2f"
+        }
+      },
+      {
+        "paymentMethod": "CREDIT_CARD",
+        "paymentMethodId": {
+          "id": "CRC-21be8fa4-a29b-410c-9f63-1d49cab63027"
+        },
+        "paymentTransaction": {
+          "price": {
+            "currency": "BRL",
+            "amount": 2000,
+            "scale": 2
+          },
+          "discount": {
+            "currency": "BRL",
+            "amount": 445,
+            "scale": 2
+          },
+          "subtotal": {
+            "currency": "BRL",
+            "amount": 1555,
+            "scale": 2
+          }
+        },
+        "creditCard": {
+          "bin": "455602",
+          "lastDigits": "9078",
+          "brand": "VISA",
+          "expirationMonth": "12",
+          "expirationYear": "2018",
+          "holder": "MARY DOO"
+        }
+      }
+    ],
+    "customFields": {
+      "customField": "customValue"
+    },
+    "customer": {
+      "id": "83237f28-8853-41a3-83d0-03457db6d014",
+      "fullName": "MARY DOO",
+      "products": [],
+      "offers": []
+    }
+  }
+}

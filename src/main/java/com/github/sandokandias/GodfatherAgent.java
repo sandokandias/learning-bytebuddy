@@ -1,5 +1,7 @@
 package com.github.sandokandias;
 
+import com.github.sandokandias.advice.AdviceMap;
+import com.github.sandokandias.advice.TargetByAdvice;
 import net.bytebuddy.agent.builder.AgentBuilder;
 
 import java.lang.instrument.Instrumentation;
@@ -14,7 +16,7 @@ public class GodfatherAgent {
     private static final AdviceMap ADVICE_MAP = new AdviceMap();
 
     public static void premain(String agentArgs, Instrumentation inst) throws Exception {
-        AdviceMap.TargetByClass target = ADVICE_MAP.getTargetByClass(agentArgs);
+        TargetByAdvice target = ADVICE_MAP.getTargetByClass(agentArgs);
 
         new AgentBuilder.Default().disableClassFormatChanges()
                 .with(RETRANSFORMATION)

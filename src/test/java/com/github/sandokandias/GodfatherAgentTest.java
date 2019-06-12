@@ -1,5 +1,6 @@
 package com.github.sandokandias;
 
+import com.github.sandokandias.target.FakeTarget;
 import net.bytebuddy.agent.ByteBuddyAgent;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -8,8 +9,8 @@ import org.springframework.mock.web.MockServletConfig;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import static com.github.sandokandias.FakeTarget.FAKE;
-import static com.github.sandokandias.SpringWebTarget.SPRING_WEB;
+import static com.github.sandokandias.target.FakeTarget.FAKE;
+import static com.github.sandokandias.target.SpringWebTarget.SPRING_WEB;
 
 public class GodfatherAgentTest {
 
