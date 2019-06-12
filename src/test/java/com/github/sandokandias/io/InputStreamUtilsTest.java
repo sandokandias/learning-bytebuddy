@@ -1,6 +1,7 @@
-package com.github.sandokandias.stream;
+package com.github.sandokandias.io;
 
 import com.github.sandokandias.Timer;
+import com.github.sandokandias.io.InputStreamUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

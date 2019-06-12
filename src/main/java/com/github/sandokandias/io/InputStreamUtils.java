@@ -1,4 +1,4 @@
-package com.github.sandokandias.stream;
+package com.github.sandokandias.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

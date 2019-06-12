@@ -1,6 +1,6 @@
 package com.github.sandokandias.servlet;
 
-import com.github.sandokandias.stream.InputStreamUtils;
+import com.github.sandokandias.io.InputStreamUtils;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;

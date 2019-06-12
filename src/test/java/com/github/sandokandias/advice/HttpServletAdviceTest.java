@@ -1,7 +1,6 @@
 package com.github.sandokandias.advice;
 
-import com.github.sandokandias.advice.HttpServletAdvice;
-import com.github.sandokandias.stream.InputStreamUtils;
+import com.github.sandokandias.io.InputStreamUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
