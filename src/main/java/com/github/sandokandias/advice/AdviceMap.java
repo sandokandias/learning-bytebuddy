@@ -5,6 +5,7 @@ import java.util.Map;
 
 import static com.github.sandokandias.target.FakeTarget.*;
 import static com.github.sandokandias.target.SpringWebTarget.*;
+import static com.github.sandokandias.target.SpringWebTestTarget.*;
 
 public class AdviceMap {
 
@@ -13,6 +14,7 @@ public class AdviceMap {
     public AdviceMap() {
         MAP.put(FAKE, new TargetByAdvice(FAKE_CLASS, FAKE_METHOD, FakeAdvice.class));
         MAP.put(SPRING_WEB, new TargetByAdvice(SPRING_WEB_CLASS, SPRING_WEB_METHOD, HttpServletAdvice.class));
+        MAP.put(SPRING_WEB_TEST, new TargetByAdvice(SPRING_WEB_TEST_CLASS, SPRING_WEB_TEST_METHOD, HttpServletAdvice.class));
     }
 
     public TargetByAdvice getTargetByClass(String key) {
