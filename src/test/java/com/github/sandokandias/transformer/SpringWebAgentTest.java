@@ -1,4 +1,4 @@
-package com.github.sandokandias.spring;
+package com.github.sandokandias.transformer;
 
 import com.github.sandokandias.GodfatherAgent;
 import com.github.sandokandias.io.InputStreamUtils;
@@ -16,7 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.io.InputStream;
 
-import static com.github.sandokandias.target.SpringWebTestTarget.SPRING_WEB_TEST;
+import static com.github.sandokandias.transformer.SpringWebTestTarget.SPRING_WEB_TEST;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class SpringAgentTest {
+public class SpringWebAgentTest {
 
     @Autowired
     private WebApplicationContext webApplicationContext;

@@ -1,4 +1,4 @@
-package com.github.sandokandias.spring;
+package com.github.sandokandias.transformer;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import java.util.UUID;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-public class SpringController {
+public class SpringWebTargetController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody

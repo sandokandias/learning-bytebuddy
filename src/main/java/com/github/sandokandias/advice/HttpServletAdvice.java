@@ -2,8 +2,8 @@ package com.github.sandokandias.advice;
 
 import com.github.sandokandias.collector.DataCollector;
 import com.github.sandokandias.collector.PrinterDataCollector;
-import com.github.sandokandias.servlet.AgentHttpServletRequestWrapper;
 import net.bytebuddy.asm.Advice;
+import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,17 +16,19 @@ public class HttpServletAdvice {
     @Advice.OnMethodEnter
     public static void before(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("before serving the request...");
+        ContentCachingRequestWrapper wrapper = new ContentCachingRequestWrapper(request);
         try {
-            AgentHttpServletRequestWrapper wrapper = new AgentHttpServletRequestWrapper(request);
-            byte[] contentAsByteArray = wrapper.getBody();
-            Map<String, String> headers = new HashMap<>();
-            headers.put("contentType", wrapper.getContentType());
-
-            DataCollector dataCollector = new PrinterDataCollector();
-            dataCollector.collect(headers, contentAsByteArray);
+            wrapper.getInputStream().read();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        byte[] contentAsByteArray = wrapper.getContentAsByteArray();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("contentType", wrapper.getContentType());
+
+        DataCollector dataCollector = new PrinterDataCollector();
+        dataCollector.collect(headers, contentAsByteArray);
+
     }
 
     @Advice.OnMethodExit

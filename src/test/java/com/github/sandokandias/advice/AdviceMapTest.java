@@ -1,12 +1,10 @@
 package com.github.sandokandias.advice;
 
-import com.github.sandokandias.advice.AdviceMap;
-import com.github.sandokandias.advice.TargetByAdvice;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.github.sandokandias.target.FakeTarget.*;
-import static com.github.sandokandias.target.SpringWebTarget.*;
+import static com.github.sandokandias.transformer.FakeTarget.*;
+import static com.github.sandokandias.transformer.SpringWebTarget.*;
 
 public class AdviceMapTest {
 

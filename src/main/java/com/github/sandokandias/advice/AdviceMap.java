@@ -3,9 +3,9 @@ package com.github.sandokandias.advice;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.github.sandokandias.target.FakeTarget.*;
-import static com.github.sandokandias.target.SpringWebTarget.*;
-import static com.github.sandokandias.target.SpringWebTestTarget.*;
+import static com.github.sandokandias.transformer.FakeTarget.*;
+import static com.github.sandokandias.transformer.SpringWebTarget.*;
+import static com.github.sandokandias.transformer.SpringWebTestTarget.*;
 
 public class AdviceMap {
 
