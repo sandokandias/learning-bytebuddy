@@ -15,7 +15,7 @@ import static com.github.sandokandias.transformer.SpringWebTarget.SPRING_WEB;
 public class GodfatherAgentTest {
 
     @Test
-    public void givenFakeTarget_whenFakeMethodIsCalled_thenExecuteCodeOnEnterAndExitMethod() throws Exception {
+    public void givenFakeTargetWhenFakeMethodIsCalledThenExecuteCodeOnEnterAndExitMethod() throws Exception {
         ByteBuddyAgent.install();
         GodfatherAgent.premain(FAKE, ByteBuddyAgent.getInstrumentation());
 
@@ -24,7 +24,7 @@ public class GodfatherAgentTest {
     }
 
     @Test
-    public void givenSpringServletDispatcher_whenServiceMethodIsCalled_thenExecuteCodeOnEnterAndExitMethod() throws Exception {
+    public void givenSpringServletDispatcherWhenServiceMethodIsCalledThenExecuteCodeOnEnterAndExitMethod() throws Exception {
         ByteBuddyAgent.install();
         GodfatherAgent.premain(SPRING_WEB, ByteBuddyAgent.getInstrumentation());
 

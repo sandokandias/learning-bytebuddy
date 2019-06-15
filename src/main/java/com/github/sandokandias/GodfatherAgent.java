@@ -23,7 +23,8 @@ public class GodfatherAgent {
                 .type(hasSuperType(named(target.clazz)))
                 .transform((builder, typeDescription, classLoader, module) ->
                         builder.visit(to(target.adviceClazz).on(named(target.method)))
-                ).installOn(inst);
+                )
+                .installOn(inst);
     }
 
     public static void agentmain(String agentArgs, Instrumentation inst) throws Exception {

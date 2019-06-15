@@ -2,33 +2,35 @@ package com.github.sandokandias.advice;
 
 import com.github.sandokandias.collector.DataCollector;
 import com.github.sandokandias.collector.PrinterDataCollector;
+import com.github.sandokandias.servlet.AgentHttpServletRequestWrapper;
 import net.bytebuddy.asm.Advice;
-import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
 public class HttpServletAdvice {
 
     @Advice.OnMethodEnter
-    public static void before(HttpServletRequest request, HttpServletResponse response) {
+    public static void before(@Advice.Argument(0) HttpServletRequest request,
+                              @Advice.Argument(1) HttpServletResponse response) {
         System.out.println("before serving the request...");
-        ContentCachingRequestWrapper wrapper = new ContentCachingRequestWrapper(request);
         try {
-            wrapper.getInputStream().read();
-        } catch (IOException e) {
+            AgentHttpServletRequestWrapper wrapper = new AgentHttpServletRequestWrapper(request);
+            Map<String, String> headers = new HashMap<>();
+            Enumeration<String> headerNames = wrapper.getHeaderNames();
+            while (headerNames.hasMoreElements()) {
+                String headerName = headerNames.nextElement();
+                String header = wrapper.getHeader(headerName);
+                headers.put(headerName, header);
+            }
+            DataCollector dataCollector = new PrinterDataCollector();
+            dataCollector.collect(headers, wrapper.getBody());
+        } catch (Throwable e) {
             e.printStackTrace();
         }
-        byte[] contentAsByteArray = wrapper.getContentAsByteArray();
-        Map<String, String> headers = new HashMap<>();
-        headers.put("contentType", wrapper.getContentType());
-
-        DataCollector dataCollector = new PrinterDataCollector();
-        dataCollector.collect(headers, contentAsByteArray);
-
     }
 
     @Advice.OnMethodExit
